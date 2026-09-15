@@ -303,7 +303,14 @@ def lambda_handler(event, context):
         if isinstance(event, str):
             event = json.loads(event)
 
-        prompt = event.get("prompt", "").strip()
+        # API Gateway sends the request payload inside "body".
+        # Direct Lambda invocation may send the payload directly.
+        request_body = event.get("body", event)
+
+        if isinstance(request_body, str):
+            request_body = json.loads(request_body)
+
+        prompt = request_body.get("prompt", "").strip()
 
         if not prompt:
             return response(
@@ -313,7 +320,7 @@ def lambda_handler(event, context):
                 }
             )
 
-        session_id = event.get(
+        session_id = request_body.get(
             "session_id",
             "default-session"
         )
@@ -337,7 +344,7 @@ def lambda_handler(event, context):
         # Conversation history
         # ----------------------------------------------------
 
-        history = event.get("history", [])
+        history = request_body.get("history", [])
 
         # ----------------------------------------------------
         # Challenge 1
