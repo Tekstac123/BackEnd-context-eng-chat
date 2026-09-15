@@ -126,7 +126,7 @@ CONTEXT_DATA = [
 
 
 # ============================================================
-# Challenge 1 - Irrelevant Context
+# Challenge 1 
 # ============================================================
 
 def select_context(prompt):
@@ -134,7 +134,7 @@ def select_context(prompt):
 
 
 # ============================================================
-# Challenge 2 - Conflicting Context
+# Challenge 2 
 # ============================================================
 
 def resolve_conflicts(context_items):
@@ -142,7 +142,7 @@ def resolve_conflicts(context_items):
 
 
 # ============================================================
-# Challenge 3 - Prompt Injection
+# Challenge 3 
 # ============================================================
 
 def prepare_context(context_items):
@@ -165,7 +165,7 @@ CONTENT:
 
 
 # ============================================================
-# Challenge 4 - Missing Context
+# Challenge 4 
 # ============================================================
 
 def check_context_available(context_items, prompt):
@@ -173,7 +173,7 @@ def check_context_available(context_items, prompt):
 
 
 # ============================================================
-# Challenge 5 - Context Overload
+# Challenge 5 
 # ============================================================
 
 MAX_CONTEXT_CHARS = 6000
@@ -184,7 +184,7 @@ def apply_context_budget(context_text):
 
 
 # ============================================================
-# Challenge 6 - Context Ordering
+# Challenge 6 
 # ============================================================
 
 def order_context(context_items):
@@ -192,7 +192,7 @@ def order_context(context_items):
 
 
 # ============================================================
-# Challenge 7 - Context Compression
+# Challenge 7 
 # ============================================================
 
 def compress_context(context_items):
@@ -200,7 +200,7 @@ def compress_context(context_items):
 
 
 # ============================================================
-# Challenge 8 - Provenance
+# Challenge 8 
 # ============================================================
 
 def create_provenance(context_items):
